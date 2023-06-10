@@ -1,5 +1,7 @@
 <script lang="ts">
+    import { derived } from 'svelte/store'
     import type { KeyboardKey } from './keys'
+    import { keyState } from './store'
 
     export let key: KeyboardKey | string
 
@@ -14,6 +16,14 @@
     export let rowIndex: number
 
     const display = keyObj.code === 'gap' ? '' : keyObj.display || keyObj.code
+
+    const pressedStore = derived(keyState, (state) => state[keyObj.code])
+
+    let pressed
+
+    pressedStore.subscribe((value) => {
+        pressed = value
+    })
 </script>
 
 <div
@@ -21,6 +31,7 @@
     style:--u={keyObj.u}
     style:--row={rowIndex === 0 ? 0 : rowIndex + 1}
     style:--v={keyObj.v}
+    data-pressed={pressed}
 >
     {display}
 </div>
@@ -40,5 +51,9 @@
 
     div[data-isgap='true'] {
         background: transparent;
+    }
+
+    div[data-pressed='true'] {
+        background: red;
     }
 </style>
