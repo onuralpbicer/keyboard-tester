@@ -22,9 +22,11 @@
     )
 
     let pressed
+    let touched
 
     pressedStore.subscribe((value) => {
         pressed = value
+        touched = value !== undefined
     })
 </script>
 
@@ -34,6 +36,7 @@
     style:--row={rowIndex === 0 ? 0 : rowIndex + 1}
     style:--v={keyObj.v}
     data-pressed={pressed}
+    data-touched={touched}
 >
     {display}
 </div>
@@ -53,6 +56,10 @@
 
     div[data-isgap='true'] {
         background: transparent;
+    }
+
+    div[data-touched='true'] {
+        background: yellow;
     }
 
     div[data-pressed='true'] {
