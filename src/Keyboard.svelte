@@ -14,7 +14,7 @@
 <style>
     .keyboard-container {
         display: grid;
-        background-color: rebeccapurple;
+        /* background-color: rebeccapurple; */
         min-width: 60vw;
         aspect-ratio: 23 / 6.25;
 

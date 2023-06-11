@@ -3,9 +3,17 @@
     line-height: 1.5;
     font-weight: 400;
 
+    --palette1: #5c374c;
+    --palette2: #985277;
+    --palette3: #ce6a85;
+    --palette4: #ff8c61;
+    --palette5: #faa275;
+
+    --text-color: #dcdcdc;
+
     color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+    color: var(--text-color);
+    background-color: var(--palette1);
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;

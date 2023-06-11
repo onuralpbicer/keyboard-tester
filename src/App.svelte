@@ -29,26 +29,48 @@
 
 <main class="page">
     <h1>Keyboard tester</h1>
-    <p>Type on your keyboard to see the keys light up on the screen</p>
-    <textarea />
-    <button on:click={clear}>clear</button>
-    <Keyboard />
 
-    <div>
-        <p>
-            <span>
-                {countValue}
-            </span>
-            key{#if countValue !== 1}
-                s
-            {/if}
-            simultaneously pressed
-        </p>
-    </div>
+    <section>
+        <p>Type on your keyboard to see the keys light up on the screen</p>
+        <textarea />
+        <button on:click={clear}>clear</button>
+    </section>
+
+    <section>
+        <Keyboard />
+
+        <div class="keycount-container">
+            <p>
+                <span>
+                    {countValue}
+                </span>
+                key{#if countValue !== 1}
+                    s
+                {/if}
+                simultaneously pressed
+            </p>
+        </div>
+    </section>
 </main>
 
 <style>
+    h1 {
+        text-transform: capitalize;
+        color: var(--palette3);
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    section {
+        margin: 2rem auto;
+        max-width: 80%;
+    }
+
     main {
         min-height: 100vh;
+    }
+
+    div.keycount-container {
+        margin-top: 1rem;
     }
 </style>

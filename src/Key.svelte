@@ -50,19 +50,25 @@
         display: grid;
         place-items: center;
 
-        background: green;
+        /* background: green; */
         margin: 2px;
+        border: 1px solid var(--palette2);
+        border-radius: 4px;
     }
 
     div[data-isgap='true'] {
         background: transparent;
+        border-width: 0;
     }
 
     div[data-touched='true'] {
-        background: yellow;
+        /* background: yellow; */
+        border-color: var(--palette4);
     }
 
     div[data-pressed='true'] {
-        background: red;
+        /* background: red; */
+        border-color: var(--palette3);
+        /* background-color: var(--palette3); */
     }
 </style>
