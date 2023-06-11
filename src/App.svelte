@@ -16,6 +16,8 @@
         })
     }
 
+    const clear = () => keyState.set({})
+
     let countValue: number
 
     pressedCount.subscribe((value) => {
@@ -26,10 +28,22 @@
 <svelte:window on:keydown={keydown} on:keyup={keyup} />
 
 <main class="page">
+    <h1>Keyboard tester</h1>
+    <p>Type on your keyboard to see the keys light up on the screen</p>
+    <textarea />
+    <button on:click={clear}>clear</button>
     <Keyboard />
 
     <div>
-        {countValue}
+        <p>
+            <span>
+                {countValue}
+            </span>
+            key{#if countValue !== 1}
+                s
+            {/if}
+            simultaneously pressed
+        </p>
     </div>
 </main>
 
