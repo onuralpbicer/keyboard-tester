@@ -319,17 +319,17 @@ export const keys: (KeyboardKey | string)[][] = [
     ],
     [
         {
-            code: 'blank',
+            code: 'ControlLeft',
             display: '.',
             u: 1.25,
         },
         {
-            code: 'blank',
+            code: 'MetaLeft',
             display: '.',
             u: 1.25,
         },
         {
-            code: 'blank',
+            code: 'AltLeft',
             display: '.',
             u: 1.25,
         },
@@ -339,22 +339,22 @@ export const keys: (KeyboardKey | string)[][] = [
             u: 6.25,
         },
         {
-            code: 'blank',
+            code: 'AltRight',
             display: '.',
             u: 1.25,
         },
         {
-            code: 'blank',
+            code: 'MetaRight',
             display: '.',
             u: 1.25,
         },
         {
-            code: 'blank',
+            code: 'Function',
             display: '.',
             u: 1.25,
         },
         {
-            code: 'blank',
+            code: 'ControlRight',
             display: '.',
             u: 1.25,
         },
