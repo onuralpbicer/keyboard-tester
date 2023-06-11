@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { derived } from 'svelte/store'
+    import { derived, readonly } from 'svelte/store'
     import type { KeyboardKey } from './keys'
     import { keyState } from './store'
 
@@ -17,7 +17,9 @@
 
     const display = keyObj.code === 'gap' ? '' : keyObj.display || keyObj.code
 
-    const pressedStore = derived(keyState, (state) => state[keyObj.code])
+    const pressedStore = readonly(
+        derived(keyState, (state) => state[keyObj.code]),
+    )
 
     let pressed
 
