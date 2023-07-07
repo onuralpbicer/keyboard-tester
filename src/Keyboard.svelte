@@ -15,7 +15,7 @@
     .keyboard-container {
         display: grid;
         /* background-color: rebeccapurple; */
-        min-width: 60vw;
+        min-width: 960px;
         aspect-ratio: 23 / 6.25;
 
         grid-template-columns: repeat(calc(23 * var(--one-u)), 1fr);
