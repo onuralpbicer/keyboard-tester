@@ -15,6 +15,14 @@
             return state
         })
     }
+    const pageBlur: svelte.JSX.FocusEventHandler<Window> = () => {
+        keyState.update((state) => {
+            Object.keys(state).forEach((key) => {
+                state[key] = false
+            })
+            return state
+        })
+    }
 
     const clear = () => keyState.set({})
 
@@ -28,6 +36,7 @@
 <svelte:window
     on:keydown|preventDefault={keydown}
     on:keyup|preventDefault={keyup}
+    on:blur={pageBlur}
 />
 
 <main class="page">
