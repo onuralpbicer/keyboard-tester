@@ -25,7 +25,10 @@
     })
 </script>
 
-<svelte:window on:keydown={keydown} on:keyup={keyup} />
+<svelte:window
+    on:keydown|preventDefault={keydown}
+    on:keyup|preventDefault={keyup}
+/>
 
 <main class="page">
     <h1>Keyboard tester</h1>
